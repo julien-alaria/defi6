@@ -30,7 +30,7 @@ nav .sidebar-button {
     border-radius: 6px;
 }
 
-aside {
+.sideBar {
     position: absolute;
     top: 0;
     left: 0;
@@ -40,7 +40,7 @@ aside {
     transition: 0.4s ease;
 }
 
-aside.open {
+.sideBar.open {
     width: 35vw;
 }
 
@@ -49,8 +49,21 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: auto;
     background-color: beige;
+}
+
+.main-aside {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    height: 100vh;
+}
+
+.main-display {
+    display: flex;
+    flex-direction: row;
 }
 
 .overlay {
@@ -89,6 +102,18 @@ main {
     margin: 10px;
     padding: 10px;
     border-radius: 6px;
+}
+
+.scrollToTopBtn {
+    display: none;
+    left: 100%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.scrollToTopBtn.show {
+    display: flex;
 }
 
 footer {
