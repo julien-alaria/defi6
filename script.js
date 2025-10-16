@@ -74,6 +74,41 @@ dropDownMenu.addEventListener("click", function() {
     dropDownMenu.classList.remove("view");
 })
 
+// Search Bar
+
+const searchBar = document.querySelector(".search-bar");
+const searchcards = document.querySelector(".cards");
+
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(searchString);
+
+    searchcards.forEach((card) => {
+        console.log(card);
+        
+    })
+
+    // cards.forEach((card) => {
+    //     console.log(card);
+    // })
+    // const filteredcard = cards.filter( card => {
+    //     return card.search(searchString);
+    // })
+    // console.log(filteredcard);
+})
+
+// let searchinput = document.querySelector("search-input");
+// let targetCards = document.querySelector(".cards");
+// let searchCardResult = "";
+// let cardResult = "";
+
+// const searchCards = (e) => {
+//     console.log(e);
+// }
+
+// searchinput.addEventListener('keyup', searchCards);
+
+
 // Context Menu
 
 // let context = document.querySelector(".context");
