@@ -63,6 +63,7 @@ window.addEventListener("scroll", function() {
 })
 
 // Mega Menu
+
 let dropDownLink = document.querySelector(".drop-down-link");
 let dropDownMenu = document.querySelector(".dropdown-menu");
 
@@ -120,6 +121,5 @@ mainContext.addEventListener("contextmenu", (e) => {
     }
    
 })
-
 
 
