@@ -1,4 +1,4 @@
-const cards = ["js", "php", "html", "css", "mysql", "sqlite", "figma", "git", "test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test","test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test" ];
+const cards = ["js", "php", "html", "css", "mysql", "sqlite", "figma"];
 
 // Display SideBar
 
@@ -29,16 +29,14 @@ closeBtn.addEventListener("click", function() {
 
 // Display Cards
 
-const displayArray = document.querySelector(".display-array");
-const ulElement = document.querySelector("ul");
+let main = document.querySelector(".main")
 
 cards.forEach((card) => {
-    const liElement = document.createElement("li");
-    liElement.innerText = card;
-    ulElement.appendChild(liElement);
-});
-
-cards.forEach(cards => console.log(cards))
+    const cardsDiv = document.createElement("div");
+    cardsDiv.classList.add("cards");
+    cardsDiv.innerText = card;
+    main.appendChild(cardsDiv);
+})
 
 //Scroll
 
@@ -78,8 +76,26 @@ dropDownMenu.addEventListener("click", function() {
 
 // Context Menu
 
-let context = document.querySelector(".context");
-context.addEventListener("contextmenu", function() {
-    
-})
+// let context = document.querySelector(".context");
+
+// context.addEventListener("contextmenu", function() {
+//     context.classList.add("view");
+// })
+
+
+
+
+
+
+// Display Lists
+
+// const ulElement = document.querySelector("ul");
+
+// cards.forEach((card) => {
+//     const liElement = document.createElement("li");
+//     liElement.innerText = card;
+//     ulElement.appendChild(liElement);
+// });
+
+// cards.forEach(cards => console.log(cards))
 
