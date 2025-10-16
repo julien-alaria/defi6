@@ -1,88 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Defi6</title>
-</head>
-<body>
-
+  </head>
+  <body  id="rightClickElement">
     <header>
+      <nav>
+        <p>My Site</p>
+        <a href="#" class="drop-down-link">Drop Down Menu</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-boxed">
+            <div class="dropdown-sections">
+              <div class="dropdown-section">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              </div>
 
-        <nav>
-            <p>My Site</p>
-            
-            <a href="#" class="drop-down-link">Drop Down Menu</a>
+              <div class="dropdown-section">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              </div>
 
-            <div class="dropdown-menu">
-                <div class="dropdown-boxed">
-                    <div class="dropdown-sections">
-
-                        <div class="dropdown-section">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum itaque blanditiis voluptates corporis facere voluptas recusandae sit eligendi veniam fugiat.</p>
-                        </div>
-
-                        <div class="dropdown-section">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum itaque blanditiis voluptates corporis facere voluptas recusandae sit eligendi veniam fugiat.</p>
-                        </div>
-
-                        <div class="dropdown-section">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum itaque blanditiis voluptates corporis facere voluptas recusandae sit eligendi veniam fugiat.</p>
-                        </div>
-                    </div>
-                </div>
+              <div class="dropdown-section">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              </div>
             </div>
-
-            <button class="sidebar-button">Sidebar</button>
-        </nav>
-
-        <aside class="sideBar"></aside>
-
+          </div>
+        </div>
+        <button class="sidebar-button">Sidebar</button>
+      </nav>
+      <aside class="sideBar"></aside>
     </header>
 
     <main class="main">
+      <div class="h1">
+        <h1>Welcome</h1>
+      </div>
 
-        <div class="h1">
-            <h1>Welcome</h1>
+      <div id="right-click-menu">
+        <div class="item" number="1">Copier</div>
+        <div class="item" number="2">Couper</div>
+        <div class="item" number="3">Coller</div>
+      </div>
+
+      <div class="search-bar">
+        <label for="search-input">Search Bar</label>
+        <input
+          type="search-input"
+          id="search-input"
+          placeholder="Votre recherche..."
+        />
+      </div>
+
+      <aside class="main-aside">
+        <div>
+          <button class="overlay-button">Modal</button>
         </div>
 
-        <div class="search-bar">
-            <label for="search-bar">Search Bar</label>
-            <input type="search-input" id="search-input" placeholder="Votre recherche...">
+        <div>
+          <button class="scrollToTopBtn">Scroll To Top</button>
         </div>
-
-        <aside class="main-aside">
-
-            <div>
-                <button class="overlay-button">Modal</button>
-            </div>
-
-            <div>
-                <button class="scrollToTopBtn">Scroll To Top</button>
-            </div>
-
-        </aside>
-
-        <div class="main-display">
-
-            <div class="display-array">
-                <ul></ul>
-            </div>
-        </div>
-
+      </aside>
     </main>
 
     <div class="overlay">
-        <div class="div-overlay">
-            <h3>Contenu de ma modal</h3>
-            <button class="close-button"><span>X</span></button>
-        </div>
+      <div class="div-overlay">
+        <h3>Contenu de ma modal</h3>
+        <button class="close-button"><span>X</span></button>
+      </div>
     </div>
 
     <footer>
-        <p>footer</p>
+      <p>footer</p>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

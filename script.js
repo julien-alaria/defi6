@@ -33,7 +33,7 @@ let main = document.querySelector(".main")
 
 cards.forEach((card) => {
     const cardsDiv = document.createElement("div");
-    cardsDiv.classList.add("cards");
+    cardsDiv.classList.add("generate-cards");
     cardsDiv.innerText = card;
     main.appendChild(cardsDiv);
 })
@@ -76,61 +76,50 @@ dropDownMenu.addEventListener("click", function() {
 
 // Search Bar
 
-const searchBar = document.querySelector(".search-bar");
-const searchcards = document.querySelector(".cards");
+// const searchBar = document.querySelector(".search-bar");
+// const searchcards = document.querySelector(".generate-cards");
 
-searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value.toLowerCase();
-    console.log(searchString);
+// searchBar.addEventListener('keyup', (e) => {
+//     const searchString = e.target.value.toLowerCase();
+//     console.log(searchString);
 
-    searchcards.forEach((card) => {
-        console.log(card);
-        
-    })
+//     let result = searchcards.find(searchString);
+//     console.log(result);
 
-    // cards.forEach((card) => {
-    //     console.log(card);
-    // })
-    // const filteredcard = cards.filter( card => {
-    //     return card.search(searchString);
-    // })
-    // console.log(filteredcard);
-})
-
-// let searchinput = document.querySelector("search-input");
-// let targetCards = document.querySelector(".cards");
-// let searchCardResult = "";
-// let cardResult = "";
-
-// const searchCards = (e) => {
-//     console.log(e);
-// }
-
-// searchinput.addEventListener('keyup', searchCards);
-
+//     cards.forEach((card) => {
+//         console.log(card);
+//     })
+//     const filteredcard = cards.filter( card => {
+//         return card.search(searchString);
+//     })
+//     console.log(filteredcard);
+// })
 
 // Context Menu
 
-// let context = document.querySelector(".context");
+const mainContext = document.querySelector(".main")
+mainContext.addEventListener("contextmenu", (e) => {
+    {e.preventDefault()};
 
-// context.addEventListener("contextmenu", function() {
-//     context.classList.add("view");
-// })
+    const rightClickElement = document.getElementById("rightClickElement");
+    const menuBox = document.getElementById("right-click-menu");
+    rightClickElement.addEventListener("contextmenu", popMenu);
+    document.body.addEventListener("click", onBodyClick);
+
+    function onBodyClick() {
+        hideMenu();
+    }
+    function hideMenu() {
+        menuBox.style.display="none";
+    }
+
+    function popMenu(e) {
+        menuBox.style.display = "block";
+        menuBox.style.top = e.pageY + "px";
+        menuBox.style.left = e.pageX + "px";
+    }
+   
+})
 
 
-
-
-
-
-// Display Lists
-
-// const ulElement = document.querySelector("ul");
-
-// cards.forEach((card) => {
-//     const liElement = document.createElement("li");
-//     liElement.innerText = card;
-//     ulElement.appendChild(liElement);
-// });
-
-// cards.forEach(cards => console.log(cards))
 
