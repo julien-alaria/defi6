@@ -1,4 +1,4 @@
-const cards = ["js", "php", "html", "css", "mysql", "sqlite", "figma", "git", "test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test","test", "test","test", "test", "test", "test","test", "test", "test",];
+const cards = ["js", "php", "html", "css", "mysql", "sqlite", "figma", "git", "test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test","test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test", "test","test", "test", "test" ];
 
 // Display SideBar
 
@@ -40,11 +40,9 @@ cards.forEach((card) => {
 
 cards.forEach(cards => console.log(cards))
 
-
 //Scroll
 
 const header = document.querySelector("header");
-
 const scrollToTopBtn = document.querySelector(".scrollToTopBtn");
 
 scrollToTopBtn.addEventListener("click", function() {
@@ -55,13 +53,33 @@ scrollToTopBtn.addEventListener("click", function() {
 
 //Apparition du scroll Button
 
-let iScrollPos = 0;
-window.scroll(function() {
-    let iCurscrollPos = this.scrollTop();
+window.addEventListener("scroll", function() {
+    console.log("test");
+    let position = this.window.scrollY;
 
-    if (iCurscrollPos > iScrollPos) {
-        scrollToTopBtn.classList.remove("show")
+    if(position > 100) {
+        scrollToTopBtn.classList.add("show");
     } else {
-        scrollToTopBtn.classListe.add("show");
+        scrollToTopBtn.classList.remove("show");
     }
 })
+
+// Mega Menu
+let dropDownLink = document.querySelector(".drop-down-link");
+let dropDownMenu = document.querySelector(".dropdown-menu");
+
+dropDownLink.addEventListener("click", function() {
+    dropDownMenu.classList.add("view");
+})
+
+dropDownMenu.addEventListener("click", function() {
+    dropDownMenu.classList.remove("view");
+})
+
+// Context Menu
+
+let context = document.querySelector(".context");
+context.addEventListener("contextmenu", function() {
+    
+})
+
