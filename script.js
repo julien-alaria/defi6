@@ -38,6 +38,54 @@ cards.forEach((card) => {
     main.appendChild(cardsDiv);
 })
 
+// Random
+
+const randomBtn = document.querySelector(".random-button");
+
+randomBtn.addEventListener("click", function() {
+    const randomCards = cards.sort(function () {
+        return Math.random() - 0.5;
+    })
+    cardsContainer.innerHTML = "";
+    randomCards.forEach((randomCard) => {
+        const cardGenerate = document.createElement("div");
+        cardGenerate.classList.add("generate-cards");
+        cardGenerate.innerText = randomCard;
+        cardGenerate.appendChild(cardGenerate);
+    })
+})
+
+// Sort
+
+const leftAside = document.querySelector(".left-aside");
+const sortBtn = document.querySelector(".sort-button");
+
+sortBtn.addEventListener("click", function() {
+    let sortCards = cards.sort();
+
+    sortCards.forEach((sortCard) => {
+        const cardGenerate = document.createElement("div");
+        cardGenerate.classList.add("random-cards");
+        cardGenerate.innerText = sortCard;
+        leftAside.appendChild(cardGenerate);
+        leftAside.style.display = "flex";
+    })
+    
+    sortBtn.addEventListener("click", function() {
+        if (leftAside.style.display === "flex") {
+            leftAside.style.display = "none";
+        } else {
+            leftAside.style.display = "flex";
+        }
+    })
+
+    leftAside.addEventListener("click", onSortedClick);
+
+    function onSortedClick() {
+        leftAside.style.display = "none";
+    }
+})
+
 //Scroll
 
 const header = document.querySelector("header");
@@ -52,7 +100,7 @@ scrollToTopBtn.addEventListener("click", function() {
 //Apparition du scroll Button
 
 window.addEventListener("scroll", function() {
-    console.log("test");
+
     let position = this.window.scrollY;
 
     if(position > 100) {
@@ -77,49 +125,45 @@ dropDownMenu.addEventListener("click", function() {
 
 // Search Bar
 
-// const searchBar = document.querySelector(".search-bar");
-// const searchcards = document.querySelector(".generate-cards");
+const searchInput = document.querySelector(".search-input");
 
-// searchBar.addEventListener('keyup', (e) => {
-//     const searchString = e.target.value.toLowerCase();
-//     console.log(searchString);
+searchInput.addEventListener("input", function(e) {
+    const query = e.target.value;
+    const cardElements = document.querySelectorAll(".generate-cards");
+    console.log(query);
 
-//     let result = searchcards.find(searchString);
-//     console.log(result);
-
-//     cards.forEach((card) => {
-//         console.log(card);
-//     })
-//     const filteredcard = cards.filter( card => {
-//         return card.search(searchString);
-//     })
-//     console.log(filteredcard);
-// })
+    cardElements.forEach((cardElement) => {
+        const cardText = cardElement.innerText;
+        if (cardText.includes(query)) {
+            cardElement.style.display = "flex";
+        } else {
+            cardElement.style.display = "none";
+        }
+    })
+})
 
 // Context Menu
 
-const mainContext = document.querySelector(".main")
-mainContext.addEventListener("contextmenu", (e) => {
+// const mainContext = document.querySelector(".main");
+const mainContext = document.querySelector(".generate-cards");
+mainContext.addEventListener("contextmenu", function(e) {
     {e.preventDefault()};
 
-    const rightClickElement = document.getElementById("rightClickElement");
+    // const rightClickElement = document.getElementById("rightClickElement");
+    const rightClickElement = document.querySelector(".generate-cards");
     const menuBox = document.getElementById("right-click-menu");
     rightClickElement.addEventListener("contextmenu", popMenu);
     document.body.addEventListener("click", onBodyClick);
-
-    function onBodyClick() {
-        hideMenu();
-    }
-    function hideMenu() {
-        menuBox.style.display="none";
-    }
 
     function popMenu(e) {
         menuBox.style.display = "block";
         menuBox.style.top = e.pageY + "px";
         menuBox.style.left = e.pageX + "px";
     }
-   
+
+    function onBodyClick() {
+        menuBox.style.display="none";
+    }
 })
 
 
